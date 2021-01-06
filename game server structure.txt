@@ -1,0 +1,33 @@
+@Server.java
+@Connection.java
+@MySQLDatabase.java
+@LoginHandler.java
+@Entity.java
+@Player.java
+@NPC.java
+
+Server.java
+- Load MySQL Database
+- Start Game Engine
+- Open Web Socket
+
+Connection.java:
+- Handles incoming and outcoming connections
+
+MySQLDatabase.java
+- Connecting to database driver
+- Accessing and Storing user data.
+
+LoginHandler.java
+- Handles incoming login requests
+- Verifies authenticity of user credentials
+
+Entity.java (Parent class)
+- Shares common behaviors between Players and NPCs
+
+Player.java (Child of Entity)
+- Contains player behavior and data in JSON array.
+
+NPC.java (Child of Entity)
+- Contains NPC behavior
+

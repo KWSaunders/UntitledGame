@@ -1,0 +1,27 @@
+default player tokens:
+gold = 50;
+playTime = 0; //seconds
+globalLevel = 1;
+totalXp = 9;
+championPoints = 5; //to be used for any of the attributes below: (gain 3 points when you advance a level)
+hitpoints = 10;
+
+currentHitpoints = 10;
+
+accuracy = 1; //chance
+damage = 1;
+block = 1; //chance
+
+//spells in ability bar
+
+accuracyRating = 1;
+attackPower = 1; //determines max damage possible in a hit
+critChance = 0.0; //chance to double determined hit
+evasion = 0.0; //chance to completely evade damage from an attack 
+cooldownReduction = 0.0;
+
+spellsUnlocked = "none";
+mana = 0;
+gender = "male";
+
+check if player exists in banned players table
