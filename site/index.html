@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>Untitled Game</title>
-    </header>
+<header>
+    <title>Untitled Game</title>
+</header>
+
 <body>
 
-<h3>Untitled Game</h3>
+    <h3>Untitled Game</h3>
 
-<style>
-label {
-    display: block;
-    font: .9rem 'Fira Sans', sans-serif;
-}
+    <style>
+        label {
+            display: block;
+            font: .9rem 'Fira Sans', sans-serif;
+        }
 
-input[type='submit'],
-label {
-    margin-top: 1rem;
-}
-</style>
+        input[type='submit'],
+        label {
+            margin-top: 1rem;
+        }
+    </style>
 
-<p>Enter your username and password</p>
+    <p>Enter your username and password</p>
 
-<div>
- <label for="myUsername">Username:</label>
- <input type="text" id="myUsername" value="">
-</div>
+    <div>
+        <label for="myUsername">Username:</label>
+        <input type="text" id="myUsername" value="">
+    </div>
 
-<div>
- <label for="myPassword">Password:</label>
- <input type="password" id="myPassword" value=""><br>
-</div>
+    <div>
+        <label for="myPassword">Password:</label>
+        <input type="password" id="myPassword" value=""><br>
+    </div>
 
-<button onclick="myFunction()">Sign in</button>
+    <button id='login'>Sign in</button>
+    <button id="create"> New Account</button>
 
-<p id="demo"></p>
-
-<script>
-var ws = new WebSocket("ws://127.0.0.1:8080");
-    setTimeout(function () {
-	if (ws.readyState === WebSocket.CLOSED) {
-   		alert("Unable to establish connection to server - Try reloading page or waiting a few minutes and then reloading.");
-	}
-    }, 3000);
-//document.getElementById("playerCount").innerHTML = ;
-function myFunction() {
-  var user = document.getElementById("myUsername").value;
-  var pass = document.getElementById("myPassword").value;
-  var loginPkt = {packet:"login", username:user, password:pass};
-  //ws = new WebSocket("ws://127.0.0.1:8080");
-  ws.send(JSON.stringify(loginPkt));
-  ws.onmessage = function (event) {
-   console.log(event.data);
-   document.getElementById("demo").innerHTML = event.data;
-  }
-}
-</script>
+    <p id="demo"></p>
 
 </body>
+<script type="text/javascript" src="script.js"></script>
+
 </html>
