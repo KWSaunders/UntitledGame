@@ -51,6 +51,15 @@ public class Connection {
 				session.getBasicRemote().sendText("Connecting to server...");
 				LoginManager.login(session, username, password);
 				break;
+				
+				// account creation
+			case "new":
+				 username = jsonObject.get("username").toString();
+				 password = jsonObject.get("password").toString();
+				 session.getBasicRemote().sendText("Connecting to server...");
+				 AccountCreation.create(session, username, password);
+					break;
+				 
 			case "fish":
 				//this kind of stuff definitely needs to be fixed!
 				for(Player p : GameEngine.players) {

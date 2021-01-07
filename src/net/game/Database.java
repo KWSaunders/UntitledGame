@@ -87,5 +87,26 @@ public class Database {
 			}  
 		}  
 	}
+	
+	//create new account
+	public void newPlayer(String user, String pass) throws SQLException, ParseException{
+		System.out.println("Creating new account for " + user);
+		//java.sql.Statement statement = connection.createStatement();
+		
+		// the mysql insert statement
+	      String query = " insert into player (username, password, data)"
+	        + " values (?, ?, ?)";
+
+	      // create the mysql insert prepared statement
+	      PreparedStatement preparedStmt = connection.prepareStatement(query);
+	      preparedStmt.setString (1, user);
+	      preparedStmt.setString (2, pass);
+	      preparedStmt.setString   (3, null);		//left as null for right now. Errors with JSONParser if I didnt
+	    
+	      // execute the prepared statement
+	      preparedStmt.execute();
+		
+//	}
+	}
 
 }
