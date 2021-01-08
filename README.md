@@ -21,5 +21,5 @@ Added periodic account saving. (currently every 5 minutes)
 Added account saving on disconnect. (saves when browser is closed or loss of connection to server)  
 Added logout function.   
 Added Player processing and saving within PlayerHandler.java  
-Note: *Player from server currently sends information for client to read every second  
-(will need to change in future to only send data that has changed, just using during development)*  
+**Note: *Player from server currently sends information for client to read every second  
+(will need to change in future to only send data that has changed, just using during development)* ** 
