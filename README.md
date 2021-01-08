@@ -2,7 +2,7 @@ README
 
 **Untitled Game**
 
-Developers:  
+**Developers:**  
 Kyle Saunders (https://github.com/KWSaunders)  
 Tyler Hayden (https://github.com/tkHayden)  
 
