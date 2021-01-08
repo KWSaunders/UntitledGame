@@ -1,0 +1,25 @@
+Show players online
+
+Login:
+Press enter to login
+Gray out login button when "attempting to login"
+Handle too many login attempts from same ip (after 10 unsuccessful login attempts put ip on 5 minute timeout) and then ignore future attempts
+Encrypt password to use either ISAAC cipher or RSA encryption
+
+Register:
+Handle too many accounts created from same ip address (max 5 accounts per 15 minutes)
+Show if username is available after typing into text box (green check mark to the right if yes)
+
+Optimize faster way to get player instance via session instance for skills and combat
+
+Logout/Disconnect
+end all player tasks or change task system to cycle system etc... look into this more (reference vanilla)
+
+
+Display game
+logout button
+Chat box with functioning chat and player icons (with level next to name)
+Global chat
+Inventory system and interface
+Equipment and attributes interface
+Social (friends chat)

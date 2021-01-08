@@ -13,8 +13,7 @@ public class LoginManager {
 	
 	public static void login(Session session, String user, String pass) throws SQLException, ParseException, IOException {
 		
-		var userExists = WebServer.getAccountsDatabase().lookup(user);
-		if(userExists == null) {
+		if(WebServer.getAccountsDatabase().lookup(user) == null) {
 			session.getBasicRemote().sendText("Invalid username or password");
 			return;
 		}

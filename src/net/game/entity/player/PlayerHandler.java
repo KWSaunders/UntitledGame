@@ -1,10 +1,11 @@
 package net.game.entity.player;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 
-import net.game.WebServer;
-
+import org.json.simple.JSONObject;
 
 public class PlayerHandler {
 	
@@ -16,10 +17,24 @@ public class PlayerHandler {
 		}
 	}
 	
+	/** Saves data for all players online */
 	public void saveAll() throws SQLException {
-		for(Player p : players) {
-			WebServer.getAccountsDatabase().save(p);
+		for(Player player : players) {
+			player.save();
 		}
+	}
+	
+	public JSONObject createNewPlayer() {
+		JSONObject json = new JSONObject();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");  
+		LocalDateTime now = LocalDateTime.now();  
+		json.put("created", dtf.format(now));
+		json.put("combatLevel", "1");
+		json.put("privilege", "player"); //player, moderator, administrator
+		json.put("currentXp", "0");
+		json.put("gold", "0");
+		json.put("timePlayed", "0");
+		return json;
 	}
 
 }

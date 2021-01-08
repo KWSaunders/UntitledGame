@@ -25,7 +25,9 @@ import java.sql.SQLException;
 public class Connection {
 
 	public static String getAddress(Session sess) {
-		return sess.getUserProperties().get("javax.websocket.endpoint.remoteAddress").toString();
+		String parts = sess.getUserProperties().get("javax.websocket.endpoint.remoteAddress").toString();
+		String addr = parts.split(":")[0].replace("/", "");
+		return addr;
 	}
 
 
@@ -63,6 +65,7 @@ public class Connection {
 					break;
 				 
 			case "fish_testtt":
+				//GameEngine.playerHandler.players.get(index)
 				//this kind of stuff definitely needs to be fixed!
 //				for(Player p : GameEngine.players) {
 //					if(p.getSession().equals(session))
