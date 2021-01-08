@@ -13,7 +13,7 @@ public class Fishing {
 			@Override
 			protected void execute() {
 				if (count > 2) {
-					p.sendMessage("You attempt to catch some fish");
+					//p.sendMessage("You attempt to catch some fish");
 				} else if(count == 1){
 					String success = "You catch some shrimps";
 					String fail = "You fail to catch anything";
@@ -29,7 +29,7 @@ public class Fishing {
 						int shrimp = Integer.parseInt(value2);
 						p.data.put("shrimp", shrimp + 1);
 					}
-					p.sendMessage(msg);
+					//p.sendMessage(msg);
 					stop();
 				}
 				count--;

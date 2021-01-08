@@ -25,6 +25,16 @@ public class Database {
 		}
 	}
 	
+	public String lookup(String username) throws SQLException, ParseException {
+		System.out.println("Looking up username: " + username);
+		java.sql.Statement statement = connection.createStatement(); 
+		ResultSet resultSet = statement.executeQuery("select * from player where username = '" + username + "'");
+		while(resultSet.next())  {
+			return resultSet.getString(1);
+		}
+		return null;
+	}
+	
 	
 	public String getPassword(String username) throws SQLException, ParseException {
 		System.out.println("Looking up password for " + username);
@@ -36,7 +46,7 @@ public class Database {
 		return null;
 	}
 	
-	public JSONObject load(Player p) throws SQLException, ParseException {
+	public JSONObject loadPlayerData(Player p) throws SQLException, ParseException {
 		System.out.println("Loading account for " + p.username);
 		java.sql.Statement statement = connection.createStatement(); 
 		ResultSet resultSet = statement.executeQuery("select * from player where username = '" + p.username + "'");
@@ -89,7 +99,7 @@ public class Database {
 	}
 	
 	//create new account
-	public void newPlayer(String user, String pass) throws SQLException, ParseException{
+	public void register(String user, String pass) throws SQLException, ParseException{
 		System.out.println("Creating new account for " + user);
 		//java.sql.Statement statement = connection.createStatement();
 		

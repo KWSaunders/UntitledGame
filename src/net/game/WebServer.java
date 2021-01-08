@@ -2,6 +2,7 @@ package net.game;
 
 import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.websocket.server.*;
 
@@ -19,10 +20,21 @@ public class WebServer {
 	final static String DB_ADMIN  = "root";
 	final static String DB_PASSWORD = "";
 	
-	static Database database = new Database(DB_ADDRESS, DB_PORT, DB_DIRECTORY, DB_ADMIN, DB_PASSWORD);
+	private static Database ACCOUNTS_DATABASE = new Database(DB_ADDRESS, DB_PORT, DB_DIRECTORY, DB_ADMIN, DB_PASSWORD);
+	
+	public static Database getAccountsDatabase() {
+		return ACCOUNTS_DATABASE;
+	}
+	
+	static ArrayList<String> wordFilter;
 
 	public static void main(String[] args) throws SQLException, InterruptedException, IOException {
+		wordFilter = net.util.FileReader.loadFile("filter_words.txt");
 		GameEngine game = new GameEngine();
+		game.start();
+		if(DB_PASSWORD.isEmpty()) {
+			System.out.println("Change MySQL Database password to non-empty password for live version.");
+		}
 		Server server = new Server();
 		ServerConnector connector = new ServerConnector(server);
 		connector.setPort(8080);
@@ -35,11 +47,6 @@ public class WebServer {
 		try {
 			ServerContainer wscontainer = WebSocketServerContainerInitializer.configureContext(context);
 			wscontainer.addEndpoint(Connection.class);
-			database.viewAll();
-			if(DB_PASSWORD.isEmpty()) {
-				System.out.println("Change MySQL DB password to non-empty password for live version.");
-			}
-			game.start();
 			server.start();
 			server.join();
 		} catch (Throwable t) {

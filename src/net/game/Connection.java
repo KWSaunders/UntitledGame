@@ -20,6 +20,7 @@ import static sbcc.Core.*;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 @ClientEndpoint
 @ServerEndpoint(value = "")
@@ -34,6 +35,10 @@ public class Connection {
 	public void onWebSocketConnect(Session sess) throws IOException {
 		sess.setMaxIdleTimeout(Long.MAX_VALUE);
 		int online = GameEngine.getPlayerCount();
+		//HashMap<String, String> map = new HashMap<String, String>();
+		JSONObject json = new JSONObject();
+		json.put("players_online", online + "");
+		sess.getBasicRemote().sendText(json.toJSONString());
 		//sess.getBasicRemote().sendText(arg0);
 		println("Client connected from: " + getAddress(sess));
 	}
@@ -53,19 +58,19 @@ public class Connection {
 				break;
 				
 				// account creation
-			case "new":
+			case "register":
 				 username = jsonObject.get("username").toString();
 				 password = jsonObject.get("password").toString();
 				 session.getBasicRemote().sendText("Connecting to server...");
-				 AccountCreation.create(session, username, password);
+				 AccountCreation.register(session, username, password);
 					break;
 				 
-			case "fish":
+			case "fish_testtt":
 				//this kind of stuff definitely needs to be fixed!
-				for(Player p : GameEngine.players) {
-					if(p.session.equals(session))
-						Fishing.catchFish(p);
-				}
+//				for(Player p : GameEngine.players) {
+//					if(p.getSession().equals(session))
+//						Fishing.catchFish(p);
+//				}
 				break;
 			}
 		}
@@ -73,14 +78,14 @@ public class Connection {
 
 
 	@OnClose
-	public void onWebSocketClose(CloseReason reason, Session session) throws SQLException {
-		println(session + " closed " + reason);
-		//this is terrible code as it has to go through the whole player list
-		for(Player p : GameEngine.players) {
-			if(session.equals(p.session)) {
-				WebServer.database.save(p);
-				GameEngine.players.remove(p);
-				//close all of the player tasks
+	public void onWebSocketClose(CloseReason reason, Session session) throws SQLException, IOException {
+		println(getAddress(session) + " closed " + reason);
+		//Handles players disconnecting!
+		for(int i = 0; i < GameEngine.players.size(); i++) {
+			Player p = GameEngine.players.get(i);
+			if(session.equals(p.getSession())) {
+				GameEngine.players.remove(i);
+				session.close();
 			}
 		}
 	}

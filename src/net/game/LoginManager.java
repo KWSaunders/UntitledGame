@@ -11,29 +11,32 @@ import net.game.entity.player.Player;
 
 public class LoginManager {
 	
-	public static void login(Session session, String input1, String input2) throws SQLException, ParseException, IOException {
-		//lookup player by username
-		//check to see if password matches
+	public static void login(Session session, String user, String pass) throws SQLException, ParseException, IOException {
 		
-		
-		//lazy method is going to just check if it's null
-		/**
-		 * Lookup
-		 */
-		var player = WebServer.database.getPassword(input1);
-		if(player == null) {
-			session.getBasicRemote().sendText("Account does not exist for " + input1);
+		var userExists = WebServer.getAccountsDatabase().lookup(user);
+		if(userExists == null) {
+			session.getBasicRemote().sendText("Account does not exist for " + user);
 			return;
 		}
 		
-		if(WebServer.database.getPassword(input1).equals(input2)) {
+		if(WebServer.getAccountsDatabase().getPassword(user).equals(pass)) {
+			// If the account is already logged in then we need to kick this account off the sessions list
+			for(int i = 0; i < GameEngine.players.size(); i++) {
+				if(GameEngine.players.get(i).username.equals(user)) {
+					Player playerToDisconnect = GameEngine.players.get(i);
+					GameEngine.players.remove(i);
+					//GameEngine.players.remove(playerToDisconnect);
+					playerToDisconnect.getSession().close();
+					playerToDisconnect = null;
+				}
+			}
 			session.getBasicRemote().sendText("Logging in...");
-			Player p = new Player();
-			p.username = input1;
-			p.password = input2;
-			p.data = WebServer.database.load(p);
-			p.session = session;
-			GameEngine.players.add(p);
+			Player player = new Player();
+			player.username = user;
+			player.password = pass;
+			player.data = WebServer.getAccountsDatabase().loadPlayerData(player);
+			player.setSession(session);
+			GameEngine.players.add(player);
 		} else {
 			session.getBasicRemote().sendText("Invalid username or password");
 		}

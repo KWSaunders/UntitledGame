@@ -29,9 +29,11 @@ public class GameEngine extends Thread {
 	
 	@Override
 	public void run() {
+		System.out.println("Game Engine Started!");
 		scheduler.schedule(new Task() {
 			@Override
 			protected void execute() {
+				
 //				playerHandler.process();
 //				npcHandler.process();
 //				itemHandler.process();

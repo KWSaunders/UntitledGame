@@ -26,7 +26,7 @@ function myFunction() {
 function createAccount(){
     let user = document.getElementById("myUsername").value;
     let pass = document.getElementById("myPassword").value;
-    let loginPkt = {packet:"new", username:user, password:pass};
+    let loginPkt = {packet:"register", username:user, password:pass};
     //ws = new WebSocket("ws://127.0.0.1:8080");
     ws.send(JSON.stringify(loginPkt));
     ws.onmessage = function (event) {
