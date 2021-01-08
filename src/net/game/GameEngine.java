@@ -1,15 +1,13 @@
 package net.game;
 
-import java.util.*;
+import java.sql.SQLException;
 
 import net.game.entity.player.*;
 import net.util.Task;
 import net.util.TaskScheduler;
 
 public class GameEngine extends Thread {
-
-	final int TICK_RATE = 600;
-	static LinkedList<Player> players = new LinkedList<Player>();
+	
 	/**
 	 * The task scheduler.
 	 */
@@ -22,19 +20,34 @@ public class GameEngine extends Thread {
 	public static TaskScheduler getTaskScheduler() {
 		return scheduler;
 	}
-
-	public static int getPlayerCount() {
-		return players.size();
+	
+	//5 minutes
+	final int SAVE_CYCLE = 5 * 60;
+	
+	
+	public static PlayerHandler playerHandler = new PlayerHandler();
+	
+	public static int getPlayersOnline() {
+		return GameEngine.playerHandler.players.size();
 	}
 	
 	@Override
 	public void run() {
 		System.out.println("Game Engine Started!");
 		scheduler.schedule(new Task() {
+			long ticks = 0;
 			@Override
 			protected void execute() {
-				
-//				playerHandler.process();
+				playerHandler.process();
+				if(ticks % SAVE_CYCLE == 0 && ticks >= SAVE_CYCLE) {
+					try {
+						playerHandler.saveAll();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				ticks++;
 //				npcHandler.process();
 //				itemHandler.process();
 //				shopHandler.process();

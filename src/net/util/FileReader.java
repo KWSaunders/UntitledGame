@@ -20,7 +20,7 @@ public class FileReader {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Finished reading " + path);
+		System.out.println("Loaded: " + path);
 		return file;
 	}
 

@@ -14,13 +14,11 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import net.game.entity.player.Player;
-import net.game.entity.player.skills.Fishing;
 
 import static sbcc.Core.*;
 
 import java.io.*;
 import java.sql.SQLException;
-import java.util.HashMap;
 
 @ClientEndpoint
 @ServerEndpoint(value = "")
@@ -34,8 +32,7 @@ public class Connection {
 	@OnOpen
 	public void onWebSocketConnect(Session sess) throws IOException {
 		sess.setMaxIdleTimeout(Long.MAX_VALUE);
-		int online = GameEngine.getPlayerCount();
-		//HashMap<String, String> map = new HashMap<String, String>();
+		int online = GameEngine.getPlayersOnline();
 		JSONObject json = new JSONObject();
 		json.put("players_online", online + "");
 		sess.getBasicRemote().sendText(json.toJSONString());
@@ -81,11 +78,10 @@ public class Connection {
 	public void onWebSocketClose(CloseReason reason, Session session) throws SQLException, IOException {
 		println(getAddress(session) + " closed " + reason);
 		//Handles players disconnecting!
-		for(int i = 0; i < GameEngine.players.size(); i++) {
-			Player p = GameEngine.players.get(i);
-			if(session.equals(p.getSession())) {
-				GameEngine.players.remove(i);
-				session.close();
+		for(int i = 0; i < GameEngine.getPlayersOnline(); i++) {
+			Player player = GameEngine.playerHandler.players.get(i);
+			if(session.equals(player.getSession())) {
+				player.logout();
 			}
 		}
 	}

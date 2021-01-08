@@ -32,9 +32,6 @@ public class WebServer {
 		wordFilter = net.util.FileReader.loadFile("filter_words.txt");
 		GameEngine game = new GameEngine();
 		game.start();
-		if(DB_PASSWORD.isEmpty()) {
-			System.out.println("Change MySQL Database password to non-empty password for live version.");
-		}
 		Server server = new Server();
 		ServerConnector connector = new ServerConnector(server);
 		connector.setPort(8080);

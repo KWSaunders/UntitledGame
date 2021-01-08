@@ -5,7 +5,9 @@ import java.sql.SQLException;
 
 import javax.websocket.Session;
 
+import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
+
 
 public class AccountCreation {
 	
@@ -36,20 +38,22 @@ public class AccountCreation {
 			return;
 		}
 		
-		boolean explicit = false;
 		for(String s : WebServer.wordFilter) {
 			if(name.contains(s)) {
-				explicit = true;
-				break;
+				session.getBasicRemote().sendText("Username not valid!");
+				return;
 			}
-		}
-		if(explicit) {
-			session.getBasicRemote().sendText("Username not valid!");
-			return;
 		}
 
 		session.getBasicRemote().sendText("Creating account....");
-		WebServer.getAccountsDatabase().register(name, pass);
+		//WebServer.getAccountsDatabase().register(name, pass); //previously used register function
+		JSONObject data = new JSONObject();
+		data.put("combatLevel", "1");
+		data.put("privilege", "player"); //player, moderator, administrator
+		data.put("currentXp", "0");
+		data.put("gold", "0");
+		data.put("timePlayed", "0");
+		WebServer.getAccountsDatabase().register(name, pass, data); //previously used register function
 		session.getBasicRemote().sendText("Account Created!");
 	}
 

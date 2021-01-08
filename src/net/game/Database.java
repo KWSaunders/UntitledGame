@@ -23,6 +23,10 @@ public class Database {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("MySQL database connected!");
+		if(password.isEmpty()) {
+			System.out.println("Change MySQL Database password to non-empty password for live version.");
+		}
 	}
 	
 	public String lookup(String username) throws SQLException, ParseException {
@@ -69,7 +73,7 @@ public class Database {
 	      preparedStmt.setString(1, p.data.toJSONString());
 	      preparedStmt.setString(2, p.username);
 	      preparedStmt.executeUpdate();
-	      System.out.println("Finished saving...");
+	      System.out.println("Finished saving... " + p.username);
 	}
 	
 	public void viewAll() throws SQLException {
@@ -99,7 +103,7 @@ public class Database {
 	}
 	
 	//create new account
-	public void register(String user, String pass) throws SQLException, ParseException{
+	public void register(String user, String pass, JSONObject data) throws SQLException, ParseException{
 		System.out.println("Creating new account for " + user);
 		//java.sql.Statement statement = connection.createStatement();
 		
@@ -109,10 +113,11 @@ public class Database {
 
 	      // create the mysql insert prepared statement
 	      PreparedStatement preparedStmt = connection.prepareStatement(query);
-	      preparedStmt.setString (1, user);
-	      preparedStmt.setString (2, pass);
-	      preparedStmt.setString   (3, null);		//left as null for right now. Errors with JSONParser if I didnt
-	    
+	      preparedStmt.setString(1, user);
+	      preparedStmt.setString(2, pass);
+	      preparedStmt.setString(3, data.toJSONString());		//left as null for right now. Errors with JSONParser if I didnt
+	    //or data.toString() not sure yet (the inverse of parse)
+	      
 	      // execute the prepared statement
 	      preparedStmt.execute();
 		
