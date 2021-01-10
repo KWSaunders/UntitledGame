@@ -15,39 +15,47 @@ public class AccountCreation {
 		//simple method for creating accounts
 		// will want to add restrictions for names, passwords and their lengths
 
+		JSONObject json = new JSONObject();
+		
 		//Restricts characters for user name (no special symbols permitted)
 		if (!name.matches("[A-Za-z0-9 ]+")) {
-			session.getBasicRemote().sendText("Invalid characters in username! Username must contain alphabetic or numeric characters only.");
+			json.put("loginResponse", "Invalid characters in username! Username must contain alphabetic or numeric characters only.");
+			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
 		
 		//Username length must be between 1-20 chars
 		if(name.length() > 20 || name.length() < 1) {
-			session.getBasicRemote().sendText("Username must be between 1-20 characters long");
+			json.put("loginResponse", "Username must be between 1-20 characters long");
+			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
 		
-		if(pass.length() > 20 || pass.length() < 4) {
-			session.getBasicRemote().sendText("Password must be between at least 5 characters long!");
+		if(pass.length() > 20 || pass.length() <= 4) {
+			json.put("loginResponse", "Password must be at least 5 characters long!");
+			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
 		
 		//Looks up if account already exists
 		if(WebServer.getAccountsDatabase().lookup(name) != null) {
-			session.getBasicRemote().sendText("Username already exists!");
+			json.put("loginResponse", "Username already exists!");
+			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
 		
 		for(String s : WebServer.wordFilter) {
 			if(name.contains(s)) {
-				session.getBasicRemote().sendText("Username not valid!");
+				json.put("loginResponse", "Username not valid!");
+				session.getBasicRemote().sendText(json.toJSONString());
 				return;
 			}
 		}
 
-		session.getBasicRemote().sendText("Creating account....");
-		WebServer.getAccountsDatabase().register(name, pass);
-		session.getBasicRemote().sendText("Account Created!");
+		WebServer.getAccountsDatabase().register(name.toLowerCase(), pass);
+		json.put("loginResponse", "Account Created!");
+		session.getBasicRemote().sendText(json.toJSONString());
+		LoginManager.login(session, name, pass);
 	}
 
 }

@@ -1,0 +1,97 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="A game about gathering as many resources as possible!  Collect diamonds aswell.">
+
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0">
+
+
+<link rel="icon" href="images/diamond.png">
+<link rel="shortcut icon" href="images/diamond.ico" type="image/x-icon" />
+
+<title>Diamond Hunt Mobile Beta</title>
+<link rel="stylesheet" href="css/styleb106.css?version=97" type="text/css" />
+<link rel="stylesheet" href="js/jquery-ui/jquery-ui.css" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="js/login.js"></script>
+<script src="js/socket.js"></script>
+
+<div class="body-tag-child" id="body-tag-child">
+<div id="login-screen">
+<center><img src="images/logo/mobileBanner.png" id="index-logo" class="horizontal-100 banner" /></center>
+
+<div id="login-server-offline-panel" style="display:none;" class="horizontal-100 login-panel">
+<h2 style="color:white;">
+Server is currently offline. Click the try again in about 5 seconds.<hr />
+<span class="span-button-highlighted sparkley" onclick="location.reload()" style="font-size:20pt;display:block;cursor: pointer;">Try Again</span>
+</h2>
+</div>
+
+<div id="main-login-panel-box-containing-all" class="horizontal-100 login-panel">
+<div id="back-login-arrow" style="text-align:left;margin-left:-25px;display:none;cursor: pointer;"><img onclick="clicksBackLoginArrow()" src="images/back.png" class="img-small" /></div>
+<form onsubmit="loginButton(); return false;">
+	<h1>
+	Play
+	</h1>
+	<div style="display:none;" class="login-message" id="login-message"></div>
+	<br />
+	<span id="login-panel-2-buttons">
+	<br />
+	<div id="login-preset-area">
+	</div>
+	<span class="span-button-highlighted" onclick="showLoginScreen();" style="font-size:20pt;display:block;cursor: pointer;">Login</span>
+	<br />
+	<span class="span-button-highlighted" onclick="showNewAccountScreen(0);" style="font-size:20pt;display:block;cursor: pointer;">New Account</span>
+	</span>
+
+	<div style="display:none;" id="login-panel-login">
+	<input type="text" id="login-username-text-box" placeholder="Username" maxlength="12" width="90%" /><br /><br />
+	<input type="password" id="login-password-text-box" placeholder="Password" maxlength="250" width="90%" /><br /><br />
+	<div style="text-align:left;"><img onclick="clicksRememberMeButton()" id="rememberMeIcon" src="images/rememberMeIconOn.png" style="vertical-align:middle;padding-bottom:4px;"  class="img-small" /> Remember me</div>
+	<span class="span-button-highlighted" onclick="clicksConfirmLoginButtonToPlay()" style="font-size:20pt;display:block;cursor: pointer;">Login</span>
+	</div>
+	
+	<div style="display:none;" id="newaccount-panel-login">
+	<input type="text" id="newaccount-username-text-box" placeholder="Username" maxlength="12" width="90%" /><br /><br />
+	<input type="password" id="newaccount-password-text-box" placeholder="Password" maxlength="250" width="90%" /><br /><br />
+	<input type="password" id="newaccount-confirm-password-text-box" placeholder="Confirm Password" maxlength="250" width="90%" /><br /><br />
+	<span id="referal-id-area">
+	<span id="login-form-referal-area" style="color:yellow;font-size:10pt;display:none;"></span><br /><br />
+	</span>
+	<span class="span-button-highlighted" onclick="clicksConfirmCreateAccountButton()" style="font-size:20pt;display:block;cursor: pointer;">Create Account</span>
+	</div>
+	
+	<br />
+</form>
+</div>
+
+</div></div>
+</div>
+
+</div>
+
+<div style="" id="game-screen">
+<div class="game-screen" id="game-screen" style="color:white;">
+
+<!-- top bar -->
+<div id="top-status-bar" class="div-fixed-top-bar">
+	<table class="table-status-bar">
+	<tr>
+	<td onclick="clicksItem('coins')" width="60%" style="border-right:1px solid grey;"><img src="images/coins.png" class="img-small"> <span id="gold"></span><span id='top-bar-bc' style='display:none;'><br /><img onclick="clicksItem('bloodCrystals')"  src="images/bloodCrystals.png" class="img-small"> <span onclick="clicksItem('bloodCrystals')"  data-item-display="bloodCrystals">0</span>  <span style="display:none;" id="buy-blood-crystals-top-btn" onclick="navigate('purchaseCrystals'); playFowardMenuSound();" class="bc-button">+</span></span></td>
+<td width="25%" onclick="navigate('hiscores')" style="text-align: center; cursor: pointer;"><img src="images/globalLevel.png" id="top-bar-total-level-img" class="img-small"> <span id="combatLevel">0</span></td>
+	<td onclick="openOptionsDialogue();" style="text-align:right;" width="15%"><span>...</span></td>
+	</tr>
+	</table>
+</div>
+
+</div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+initWebsocket();
+
+});
+
+</script>

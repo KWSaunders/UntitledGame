@@ -30,21 +30,23 @@ public class Connection {
 		return addr;
 	}
 
-
 	@OnOpen
 	public void onWebSocketConnect(Session sess) throws IOException {
 		sess.setMaxIdleTimeout(Long.MAX_VALUE);
 		int online = GameEngine.getPlayersOnline();
 		JSONObject json = new JSONObject();
-		json.put("players_online", online + "");
+		//json.put("packet", "players_online");
+		json.put("playersOnline", online + "");
+		json.put("loginResponse", "");
 		sess.getBasicRemote().sendText(json.toJSONString());
-		//sess.getBasicRemote().sendText(arg0);
+		// sess.getBasicRemote().sendText(arg0);
 		println("Client connected from: " + getAddress(sess));
 	}
 
 	@OnMessage
 	public void onWebSocketText(String message, Session session) throws IOException, ParseException, SQLException {
 		println(message);
+		try {
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject = (JSONObject) jsonParser.parse(message);
 		if (jsonObject.containsKey("packet")) {
@@ -52,21 +54,28 @@ public class Connection {
 			case "login":
 				String username = jsonObject.get("username").toString();
 				String password = jsonObject.get("password").toString();
-				session.getBasicRemote().sendText("Connecting to server...");
+				//session.getBasicRemote().sendText("Connecting to server...");
 				LoginManager.login(session, username, password);
 				break;
-				
-				// account creation
+
+			// account creation
 			case "register":
-				 username = jsonObject.get("username").toString();
-				 password = jsonObject.get("password").toString();
-				 session.getBasicRemote().sendText("Connecting to server...");
-				 AccountCreation.register(session, username, password);
-					break;
-				 
+				username = jsonObject.get("username").toString();
+				password = jsonObject.get("password").toString();
+				//session.getBasicRemote().sendText("Connecting to server...");
+				AccountCreation.register(session, username, password);
+				break;
+				
+			case "logout": 
+				for(Player p : GameEngine.getPlayers()) {
+					if(p.getSession().equals(session))
+						p.logout();
+				}
+				break;
+
 			case "fish_testtt":
-				//GameEngine.playerHandler.players.get(index)
-				//this kind of stuff definitely needs to be fixed!
+				// GameEngine.playerHandler.players.get(index)
+				// this kind of stuff definitely needs to be fixed!
 //				for(Player p : GameEngine.players) {
 //					if(p.getSession().equals(session))
 //						Fishing.catchFish(p);
@@ -74,21 +83,23 @@ public class Connection {
 				break;
 			}
 		}
+		} catch(RuntimeException e) {
+			System.out.println("Unhandled message from client!");
+		}
 	}
-
 
 	@OnClose
 	public void onWebSocketClose(CloseReason reason, Session session) throws SQLException, IOException {
 		println(getAddress(session) + " closed " + reason);
-		//Handles players disconnecting!
-		for(int i = 0; i < GameEngine.getPlayersOnline(); i++) {
+		// Handles players disconnecting!
+		// find session for player using hashmap? to avoid looping through all players
+		for (int i = 0; i < GameEngine.getPlayersOnline(); i++) {
 			Player player = GameEngine.playerHandler.players.get(i);
-			if(session.equals(player.getSession())) {
+			if (session.equals(player.getSession())) {
 				player.logout();
 			}
 		}
 	}
-
 
 	@OnError
 	public void onWebSocketError(Throwable cause) {

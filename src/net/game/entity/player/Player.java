@@ -30,9 +30,10 @@ public class Player extends Entity {
 	}
 	
 	public void logout() throws SQLException, IOException {
-		GameEngine.playerHandler.players.remove(this);
-		save();
+		data.put("lastIp", Connection.getAddress(session));
+		this.save();
 		session.close();
+		GameEngine.playerHandler.players.remove(this);
 		System.out.println(this.username + " has disconnected.");
 	}
 	
@@ -53,6 +54,7 @@ public class Player extends Entity {
 	public void process() {
 		try {
 			increment("timePlayed", 1);
+			data.put("playersOnline", GameEngine.getPlayersOnline() + "");
 			session.getBasicRemote().sendText(data.toJSONString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -61,7 +63,6 @@ public class Player extends Entity {
 	}
 	
 	public void save() {
-		data.put("lastIp", Connection.getAddress(session));
 		try {
 			WebServer.getAccountsDatabase().save(this);
 		} catch (SQLException e) {

@@ -1,6 +1,7 @@
 package net.game;
 
 import java.sql.SQLException;
+import java.util.LinkedList;
 
 import net.game.entity.player.*;
 import net.util.Task;
@@ -28,7 +29,11 @@ public class GameEngine extends Thread {
 	public static PlayerHandler playerHandler = new PlayerHandler();
 	
 	public static int getPlayersOnline() {
-		return GameEngine.playerHandler.players.size();
+		return playerHandler.players.size();
+	}
+	
+	public static LinkedList<Player> getPlayers() {
+		return playerHandler.players;
 	}
 	
 	@Override

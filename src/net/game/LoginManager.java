@@ -5,39 +5,48 @@ import java.sql.SQLException;
 
 import javax.websocket.Session;
 
+import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import net.game.entity.player.Player;
 
 public class LoginManager {
-	
-	public static void login(Session session, String user, String pass) throws SQLException, ParseException, IOException {
+
+	public static void login(Session session, String user, String pass)
+			throws SQLException, ParseException, IOException {
+		JSONObject json = new JSONObject();
 		
-		if(WebServer.getAccountsDatabase().lookup(user) == null) {
-			session.getBasicRemote().sendText("Invalid username or password");
+		if (WebServer.getAccountsDatabase().lookup(user) == null) {
+			json.put("loginResponse", "Invalid username or password");
+			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
-		
-		if(WebServer.getAccountsDatabase().getPassword(user).equals(pass)) {
-			// If the account is already logged in then we need to kick this account off
-			for(int i = 0; i < GameEngine.getPlayersOnline(); i++) {
-				Player p = GameEngine.playerHandler.players.get(i);
-				if(p.username.equals(user)) {
-					GameEngine.playerHandler.players.remove(i);
-					session.close();
-				}
+
+		if (!WebServer.getAccountsDatabase().getPassword(user).equals(pass)) {
+			json.put("loginResponse", "Invalid username or password");
+			session.getBasicRemote().sendText(json.toJSONString());
+			return;
+		}
+		// If the account is already logged in then we need to kick this account off
+		for (int i = 0; i < GameEngine.getPlayersOnline(); i++) {
+			Player p = GameEngine.getPlayers().get(i);
+			if (p.username.equals(user)) {
+				p.logout();
 			}
-			session.getBasicRemote().sendText("Logging in...");
-			Player player = new Player();
-			player.username = user;
-			player.password = pass;
-			player.data = WebServer.getAccountsDatabase().loadPlayerData(player);
-			player.setSession(session);
-			GameEngine.playerHandler.players.add(player);
-		} else {
-			session.getBasicRemote().sendText("Invalid username or password");
 		}
 		
+		//fix this in this area or ignore it
+		
+		json.put("loginResponse", "Loading...");
+		session.getBasicRemote().sendText(json.toJSONString());
+		Player player = new Player();
+		player.username = user;
+		player.password = pass;
+		player.data = WebServer.getAccountsDatabase().loadPlayerData(player);
+		player.setSession(session);
+		GameEngine.getPlayers().add(player);
+		session.getBasicRemote().sendText("DISPLAY_GAME");
+
 	}
 
 }

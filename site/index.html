@@ -7,6 +7,19 @@
 <body>
 
     <h3>Untitled Game</h3>
+	
+
+	<body>
+	
+	<p> Players Online: </p>
+	<p id="playerCount"></p>
+	
+	<p> Gold: </p>
+	<img id="coins" width="40" height="40" src="coins.png" alt="Gold coins">
+	<p id="gold"></p>
+	
+	<p> Playtime: </p>
+	<p id="timePlayed"></p>
 
     <style>
         label {
@@ -31,11 +44,12 @@
         <label for="myPassword">Password:</label>
         <input type="password" id="myPassword" value=""><br>
     </div>
+	
+	<p id="loginResponse"></p>
 
     <button id='login'>Sign in</button>
     <button id="create"> New Account</button>
-
-    <p id="demo"></p>
+	<button id="logout"> Logout</button>
 
 </body>
 <script type="text/javascript" src="script.js"></script>

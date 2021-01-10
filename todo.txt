@@ -7,6 +7,8 @@ Handle too many login attempts from same ip (after 10 unsuccessful login attempt
 Encrypt password to use either ISAAC cipher or RSA encryption
 
 Register:
+(maybe implement sign up with google/facebook)
+confirm password
 Handle too many accounts created from same ip address (max 5 accounts per 15 minutes)
 Show if username is available after typing into text box (green check mark to the right if yes)
 
@@ -14,12 +16,20 @@ Optimize faster way to get player instance via session instance for skills and c
 
 Logout/Disconnect
 end all player tasks or change task system to cycle system etc... look into this more (reference vanilla)
-
-
-Display game
 logout button
+
+Display game: (ESSENTIAL)
 Chat box with functioning chat and player icons (with level next to name)
-Global chat
+
+Account settings interface
+change password
 Inventory system and interface
 Equipment and attributes interface
 Social (friends chat)
+donation system
+game market
+
+come up with name
+find nice .com domain
+buy vps/dedicated server (trentahost is good)
+deploy onto linux server (ubuntu server? or possibly debian)
