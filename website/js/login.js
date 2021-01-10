@@ -12,6 +12,7 @@ function showLoginScreen() {
     hideAllLoginScreens();
     document["getElementById"]("login-panel-login")["style"]["display"] = "";
     document["getElementById"]("back-login-arrow")["style"]["display"] = ""
+    document["getElementById"]("top-status-bar")["style"]["display"] = "none";
 }
 
 function clicksBackLoginArrow() {

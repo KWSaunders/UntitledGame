@@ -1,35 +1,18 @@
-Show players online
+GameEngine - create better way to get player object based on session instance
+possibly use playerHandler.process() player.process()
 
-Login:
-Press enter to login
-Gray out login button when "attempting to login"
-Handle too many login attempts from same ip (after 10 unsuccessful login attempts put ip on 5 minute timeout) and then ignore future attempts
-Encrypt password to use either ISAAC cipher or RSA encryption
+Website:
+install website certificate
+wss (websocket secure)
+create subdomain to use for server (server.xyle.org)
 
-Register:
-(maybe implement sign up with google/facebook)
-confirm password
-Handle too many accounts created from same ip address (max 5 accounts per 15 minutes)
-Show if username is available after typing into text box (green check mark to the right if yes)
-
-Optimize faster way to get player instance via session instance for skills and combat
-
-Logout/Disconnect
-end all player tasks or change task system to cycle system etc... look into this more (reference vanilla)
+code:
+Fix login responses, creation responses
+Fix top-bar
+Reading json data from socket to usable json
+change background and logo
 logout button
-
-Display game: (ESSENTIAL)
-Chat box with functioning chat and player icons (with level next to name)
-
-Account settings interface
-change password
-Inventory system and interface
-Equipment and attributes interface
-Social (friends chat)
-donation system
-game market
-
-come up with name
-find nice .com domain
-buy vps/dedicated server (trentahost is good)
-deploy onto linux server (ubuntu server? or possibly debian)
+chat system
+settings widget
+inventory system
+tile map with movement and collision

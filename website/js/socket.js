@@ -5,6 +5,7 @@ function initWebsocket() {
     webSocket = null;
     webSocket = new WebSocket("ws:127.0.0.1:8080");
     initWebSocketFunctions()
+    document["getElementById"]("top-status-bar")["style"]["display"] = "none";
 }
 
 function command(message) {
@@ -12,6 +13,7 @@ function command(message) {
 	if(message == 'DISPLAY_GAME') {
 	        document["getElementById"]("login-screen")["style"]["display"] = "none";
         	document["getElementById"]("game-screen")["style"]["display"] = "";	
+   		document["getElementById"]("top-status-bar")["style"]["display"] = "";
 	}
  	json = JSON.parse(message);
  	//console.log(json);
