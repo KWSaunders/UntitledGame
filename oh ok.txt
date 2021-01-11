@@ -1,0 +1,12 @@
+to do game-screen, essentially copy login-screen and begin modifications to implement canvas
+may need to redo packet system and json objects
+
+remove top-bar
+fix login box
+redo game-screen
+read data from jsonArray (jsonArray.push) etc
+disconnect feature
+reconnect
+
+
+fix login after invalid username/password

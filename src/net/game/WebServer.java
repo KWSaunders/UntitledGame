@@ -49,6 +49,16 @@ public class WebServer {
 		} catch (Throwable t) {
 			t.printStackTrace(System.err);
 		}
+		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+		    public void run() {
+		        try {
+					GameEngine.playerHandler.saveAll();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    }
+		}));
 	}
 
 }

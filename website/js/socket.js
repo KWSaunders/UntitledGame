@@ -16,10 +16,6 @@ function command(message) {
    		document["getElementById"]("top-status-bar")["style"]["display"] = "";
 	}
  	json = JSON.parse(message);
- 	//console.log(json);
-
-	//console.log(Object.keys(json));
-
 	Object.keys(json).forEach(function(key) {
     		document["getElementById"](key)["innerHTML"] = json[key];
 			console.log(key, " -> ", json[key]);
@@ -28,6 +24,7 @@ function command(message) {
 	//fix this only when send the loginResponse
         document["getElementById"]("login-message")["style"]["display"] = "";
         document["getElementById"]("login-message")["innerHTML"] = json.loginResponse;
+	console.log("LOGIN RESPONSE: ", json.loginResponse);
 
         if (json.loginResponse == "Loading...") {
             enableLoginFunctionsGlobal = true
