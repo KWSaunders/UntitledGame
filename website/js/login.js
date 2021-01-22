@@ -33,15 +33,15 @@ function showNewAccountScreen(_0x257E4) {
 }
 
 function clicksConfirmCreateAccountButton() {
-    if (enableLoginFunctionsGlobal) {
+    //if (enableLoginFunctionsGlobal) {
         showLoginMessageAsConnecting();
         var _0x1A1BC = 0;
         var user = document["getElementById"]("newaccount-username-text-box")["value"];
         var pass1 = document["getElementById"]("newaccount-password-text-box")["value"];
         var pass2 = document["getElementById"]("newaccount-confirm-password-text-box")["value"];
-		let loginPkt = {packet:"register", username:user, password:pass1};
-		webSocket.send(JSON.stringify(loginPkt));
-    }
+	let loginPkt = {packet:"register", username:user, password:pass1};
+	webSocket.send(JSON.stringify(loginPkt));
+    //}
 }
 
 function clicksConfirmLoginButtonToPlay() {

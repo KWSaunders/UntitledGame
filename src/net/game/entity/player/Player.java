@@ -51,7 +51,7 @@ public class Player extends Entity {
 		try {
 			increment("timePlayed", 1);
 			JSONObject json = data;
-			json.put("packet", "updatePlayer");
+			json.put("packet", "update");
 			json.put("playersOnline", GameEngine.getPlayersOnline() + "");
 			session.getBasicRemote().sendText(json.toJSONString());
 		} catch (IOException e) {
