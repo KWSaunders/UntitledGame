@@ -15,6 +15,7 @@ public class LoginManager {
 	public static void login(Session session, String user, String pass)
 			throws SQLException, ParseException, IOException {
 		JSONObject json = new JSONObject();
+		json.put("packet", "loginResponse");
 		
 		if (WebServer.getAccountsDatabase().lookup(user) == null) {
 			json.put("loginResponse", "Invalid username or password");
@@ -43,7 +44,7 @@ public class LoginManager {
 		player.username = user;
 		player.password = pass;
 		player.data = WebServer.getAccountsDatabase().loadPlayerData(player);
-		player.setSession(session);
+		player.session = session;
 		GameEngine.getPlayers().add(player);
 		session.getBasicRemote().sendText("DISPLAY_GAME");
 

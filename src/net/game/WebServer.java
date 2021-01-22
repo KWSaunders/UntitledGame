@@ -26,10 +26,14 @@ public class WebServer {
 		return ACCOUNTS_DATABASE;
 	}
 	
-	static ArrayList<String> wordFilter;
+	static ArrayList<String> censoredWordsList;
+	
+	public static ArrayList<String> getCensoredWordsList() {
+		return censoredWordsList;
+	}
 
 	public static void main(String[] args) throws SQLException, InterruptedException, IOException {
-		wordFilter = net.util.FileReader.loadFile("filter_words.txt");
+		censoredWordsList = net.util.FileReader.loadFile("filter_words.txt");
 		GameEngine game = new GameEngine();
 		game.start();
 		Server server = new Server();

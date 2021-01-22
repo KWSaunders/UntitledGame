@@ -26,7 +26,11 @@ public class GameEngine extends Thread {
 	final int SAVE_CYCLE = 5 * 60;
 	
 	
-	public static PlayerHandler playerHandler = new PlayerHandler();
+	public static PlayerHandler playerHandler = new PlayerHandler(); 
+	
+	public PlayerHandler getAllPlayers() {
+		return playerHandler;
+	}
 	
 	public static int getPlayersOnline() {
 		return playerHandler.players.size();
@@ -43,10 +47,13 @@ public class GameEngine extends Thread {
 			long ticks = 0;
 			@Override
 			protected void execute() {
-				playerHandler.process();
+				
+				getAllPlayers().process();
+				
+				//every 5 minutes save all players
 				if(ticks % SAVE_CYCLE == 0 && ticks >= SAVE_CYCLE) {
 					try {
-						playerHandler.saveAll();
+						getAllPlayers().saveAll();
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

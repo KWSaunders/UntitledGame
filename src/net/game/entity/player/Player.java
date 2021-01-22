@@ -19,11 +19,7 @@ public class Player extends Entity {
 	public String username;
 	public String password;
 	public JSONObject data;
-	private Session session;
-	
-	public void setSession(Session s) {
-		this.session = s;
-	}
+	public Session session;
 	
 	public Session getSession() {
 		return session;
@@ -54,8 +50,10 @@ public class Player extends Entity {
 	public void process() {
 		try {
 			increment("timePlayed", 1);
-			data.put("playersOnline", GameEngine.getPlayersOnline() + "");
-			session.getBasicRemote().sendText(data.toJSONString());
+			JSONObject json = data;
+			json.put("packet", "updatePlayer");
+			json.put("playersOnline", GameEngine.getPlayersOnline() + "");
+			session.getBasicRemote().sendText(json.toJSONString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

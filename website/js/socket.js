@@ -9,28 +9,39 @@ function initWebsocket() {
 }
 
 function command(message) {
- 	try {
 	if(message == 'DISPLAY_GAME') {
 	        document["getElementById"]("login-screen")["style"]["display"] = "none";
         	document["getElementById"]("game-screen")["style"]["display"] = "";	
-   		document["getElementById"]("top-status-bar")["style"]["display"] = "";
+   			document["getElementById"]("top-status-bar")["style"]["display"] = "";
 	}
+	
+ 	try {
  	json = JSON.parse(message);
-	Object.keys(json).forEach(function(key) {
-    		document["getElementById"](key)["innerHTML"] = json[key];
-			console.log(key, " -> ", json[key]);
-	});
+	switch(json.packet) {
+		case "loginResponse":
+			console.log("LOGIN RESPONSE: ", json.loginResponse);
+			document["getElementById"]("login-message")["style"]["display"] = "";
+    		document["getElementById"]("login-message")["innerHTML"] = json.loginResponse;
+        	if (json.loginResponse == "Loading...") {
+            		enableLoginFunctionsGlobal = true
+        	}
+			break;
+		case "updatePlayer":
+			Object.keys(json).forEach(function(key) {
+				//this is weird, needs major fixing
+    			document["getElementById"](key)["innerHTML"] = json[key];
+				console.log(key, " -> ", json[key]);
+			});
+			break;
+		case "startGame":
+			document["getElementById"]("login-screen")["style"]["display"] = "none";
+        	document["getElementById"]("game-screen")["style"]["display"] = "";	
+   			document["getElementById"]("top-status-bar")["style"]["display"] = "";
+			break;
+	}
 
-	//fix this only when send the loginResponse
-        document["getElementById"]("login-message")["style"]["display"] = "";
-        document["getElementById"]("login-message")["innerHTML"] = json.loginResponse;
-	console.log("LOGIN RESPONSE: ", json.loginResponse);
-
-        if (json.loginResponse == "Loading...") {
-            enableLoginFunctionsGlobal = true
-        }
  	} catch (e) {
- 		console.log('This doesn\'t look like a valid JSON: ', message.data);
+ 		console.log('This doesn\'t look like a valid JSON: ', message);
  		return;
  	}
 }

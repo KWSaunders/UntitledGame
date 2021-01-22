@@ -16,6 +16,7 @@ public class AccountCreation {
 		// will want to add restrictions for names, passwords and their lengths
 
 		JSONObject json = new JSONObject();
+		json.put("packet", "loginResponse");
 		
 		//Restricts characters for user name (no special symbols permitted)
 		if (!name.matches("[A-Za-z0-9 ]+")) {
@@ -44,7 +45,7 @@ public class AccountCreation {
 			return;
 		}
 		
-		for(String s : WebServer.wordFilter) {
+		for(String s : WebServer.getCensoredWordsList()) {
 			if(name.contains(s)) {
 				json.put("loginResponse", "Username not valid!");
 				session.getBasicRemote().sendText(json.toJSONString());

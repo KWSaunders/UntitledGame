@@ -35,9 +35,7 @@ public class Connection {
 		sess.setMaxIdleTimeout(Long.MAX_VALUE);
 		int online = GameEngine.getPlayersOnline();
 		JSONObject json = new JSONObject();
-		//json.put("packet", "players_online");
 		json.put("playersOnline", online + "");
-		json.put("loginResponse", "");
 		sess.getBasicRemote().sendText(json.toJSONString());
 		// sess.getBasicRemote().sendText(arg0);
 		println("Client connected from: " + getAddress(sess));
