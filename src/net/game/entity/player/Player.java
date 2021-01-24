@@ -2,8 +2,6 @@ package net.game.entity.player;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.websocket.Session;
 
@@ -25,34 +23,15 @@ public class Player extends Entity {
 		return session;
 	}
 	
-	public void logout() throws SQLException, IOException {
-		data.put("lastIp", Connection.getAddress(session));
-		this.save();
-		session.close();
-		GameEngine.playerHandler.players.remove(this);
-		System.out.println(this.username + " has disconnected.");
-	}
-	
-	void increment(String name, long amount) {
-		String item = (String) data.get(name);
-		long current = Integer.parseInt(item);
-		long adjustment = current + amount;
-		data.put(name, adjustment + "");
-	}
-	
-	void decrement(String name, long amount) {
-		String item = (String) data.get(name);
-		long current = Integer.parseInt(item);
-		long adjustment = current - amount;
-		data.put(name, adjustment + "");
-	}
-
 	public void process() {
+		increment("timePlayed", 1);
+		update();
+	}
+	
+	public void update() {
+		JSONObject json = data;
+		json.put("packet", "update");
 		try {
-			increment("timePlayed", 1);
-			JSONObject json = data;
-			json.put("packet", "update");
-			json.put("playersOnline", GameEngine.getPlayersOnline() + "");
 			session.getBasicRemote().sendText(json.toJSONString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -64,9 +43,35 @@ public class Player extends Entity {
 		try {
 			WebServer.getAccountsDatabase().save(this);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Exception while saving to database!");
 			e.printStackTrace();
 		}
+	}
+	
+	public void logout() throws SQLException, IOException {
+		set("lastIp", Connection.getAddress(session));
+		save();
+		session.close();
+		GameEngine.getPlayers().remove(this);
+		System.out.println(this.username + " has disconnected.");
+	}
+	
+	void set(String key, String val) {
+		data.put(key, val);
+	}
+	
+	void increment(String name, long amount) {
+		String item = (String) data.get(name);
+		long current = Integer.parseInt(item);
+		long adjustment = current + amount;
+		set(name, adjustment + "");
+	}
+	
+	void decrement(String name, long amount) {
+		String item = (String) data.get(name);
+		long current = Integer.parseInt(item);
+		long adjustment = current - amount;
+		set(name, adjustment + "");
 	}
 
 }

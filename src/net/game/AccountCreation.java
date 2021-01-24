@@ -40,14 +40,14 @@ public class AccountCreation {
 		
 		//Looks up if account already exists
 		if(WebServer.getAccountsDatabase().lookup(name) != null) {
-			json.put("loginResponse", "Username already exists!");
+			json.put("loginResponse", "Username already taken!");
 			session.getBasicRemote().sendText(json.toJSONString());
 			return;
 		}
 		
 		for(String s : WebServer.getCensoredWordsList()) {
 			if(name.contains(s)) {
-				json.put("loginResponse", "Username not valid!");
+				json.put("loginResponse", "Username not valid! Please try another one");
 				session.getBasicRemote().sendText(json.toJSONString());
 				return;
 			}

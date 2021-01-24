@@ -1,0 +1,14 @@
+bugs:
+json bug not reading all data
+send button needs resize
+first chat message needs to be moved up 1 line
+remove background when game-screen displays
+
+todo:
+fix up server sided retrieval of player instance through session instance
+chat icons next to name
+change icon feature/button
+emojis
+
+inventory interface
+display level

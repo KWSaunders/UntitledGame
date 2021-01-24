@@ -1,3 +1,4 @@
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="A game about gathering as many resources as possible!  Collect diamonds aswell.">
 
@@ -8,12 +9,14 @@
 <link rel="shortcut icon" href="images/diamond.ico" type="image/x-icon" />
 
 <title>UNTITLED GAME TITLE</title>
-<link rel="stylesheet" href="css/styleb106.css?version=97" type="text/css" />
+<link rel="stylesheet" href="css/style.css?version=97" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script src="js/login.js"></script>
 <script src="js/socket.js"></script>
+<script src="js/chat.js"></script>
 
-<div class="body-tag-child" id="body-tag-child">
+<body id="body-tag">
+<div class="body-tag-child" id="body-tag-child" style="width: 500px;">
 <div id="login-screen">
 <center><img src="images/logo/mobileBanner.png" id="index-logo" class="horizontal-100 banner" /></center>
 
@@ -23,6 +26,7 @@ Server is currently offline. Click the try again in about 5 seconds.<hr />
 <span class="span-button-highlighted sparkley" onclick="location.reload()" style="font-size:20pt;display:block;cursor: pointer;">Try Again</span>
 </h2>
 </div>
+</head>
 
 <div id="main-login-panel-box-containing-all" class="horizontal-100 login-panel">
 <div id="back-login-arrow" style="text-align:left;margin-left:-25px;display:none;cursor: pointer;"><img onclick="clicksBackLoginArrow()" src="images/back.png" class="img-small" /></div>
@@ -61,13 +65,10 @@ Server is currently offline. Click the try again in about 5 seconds.<hr />
 	<br />
 </form>
 </div>
-
-</div></div>
 </div>
 
-</div>
-
-<div style="" id="game-screen">
+<!-- building the game screen -->
+<div style="display:none;" id="game-screen">
 <div class="game-screen" id="game-screen" style="color:white;">
 
 <!-- top bar -->
@@ -80,10 +81,39 @@ Server is currently offline. Click the try again in about 5 seconds.<hr />
 	</tr>
 	</table>
 </div>
+<canvas id="myCanvas" width="765" height="503" style="border:1px solid #000000;">
+</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();
+ctx.rect(0, 0, 765, 503);
+ctx.fillStyle = "white";
+ctx.fill();
+
+//how to get this ontop of the filled color??
+ctx.font = "50px Arial";
+ctx.fillStyle = "black";
+ctx.fillText("Welcome to Untitled Game",10,50);
+
+</script>
+
+<!-- chat box -->
+<div class="chat-box-area" id="chat-box-area">
+<span style="float:right;"><span id="mute-button" class="activate-tooltip" tooltip="Mute Player" onclick="mutePlayer()" style="display:none;background-color:red;cursor:pointer;padding-left:5px;padding-right:5px;margin-bottom:2px;">Mute Player</span>&nbsp; 
+
+<span onclick="send('TOGGLE_CHAT');openDialogue('Notice','You can re-enable the chat in your settings on the top bar.','');" class="activate-tooltip" tooltip="Hide" style="border:1px solid black;display:inline-block;background-color:red;cursor:pointer;padding-left:5px;padding-right:5px;margin-bottom:2px;">X</span></span>
+ <div disabled="disabled" id="chat-area-div" style="width:100%;" class="chat-area-div"><span style="color:grey">Welcome to Untitled Game!  Type /commands to see available commands.<br>Make sure you read the <a href="https://www.xyle.org/chat_rules.txt" target="_blank">chat rules</a>.</span><br><br></div>
+ <input type="text" placeholder="" onkeydown="checkEnter(event, this)" id="textbox-chat" style="width:50%;"><input type="button" id="send-chat-btn" tabindex="-1" onclick="sendChat(document.getElementById('textbox-chat').value)" value="Send">
+</div>
 
 </div>
 </div>
 
+
+</body>
 <script>
 
 document.addEventListener("DOMContentLoaded", function(event) {

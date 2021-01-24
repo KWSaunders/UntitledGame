@@ -45,43 +45,75 @@ public class Connection {
 	public void onWebSocketText(String message, Session session) throws IOException, ParseException, SQLException {
 		println(message);
 		try {
-		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObject = (JSONObject) jsonParser.parse(message);
-		if (jsonObject.containsKey("packet")) {
-			switch (jsonObject.get("packet").toString()) {
-			case "login":
-				String username = jsonObject.get("username").toString();
-				String password = jsonObject.get("password").toString();
-				//session.getBasicRemote().sendText("Connecting to server...");
-				LoginManager.login(session, username, password);
-				break;
+			JSONParser jsonParser = new JSONParser();
+			JSONObject jsonObject = (JSONObject) jsonParser.parse(message);
+			if (jsonObject.containsKey("packet")) {
+				switch (jsonObject.get("packet").toString()) {
+				case "login":
+					String username = jsonObject.get("username").toString();
+					String password = jsonObject.get("password").toString();
+					// session.getBasicRemote().sendText("Connecting to server...");
+					LoginManager.login(session, username, password);
+					break;
 
-			// account creation
-			case "register":
-				username = jsonObject.get("username").toString();
-				password = jsonObject.get("password").toString();
-				//session.getBasicRemote().sendText("Connecting to server...");
-				AccountCreation.register(session, username, password);
-				break;
-				
-			case "logout": 
-				for(Player p : GameEngine.getPlayers()) {
-					if(p.getSession().equals(session))
-						p.logout();
-				}
-				break;
+				// account creation
+				case "register":
+					username = jsonObject.get("username").toString();
+					password = jsonObject.get("password").toString();
+					// session.getBasicRemote().sendText("Connecting to server...");
+					AccountCreation.register(session, username, password);
+					break;
 
-			case "fish_testtt":
-				// GameEngine.playerHandler.players.get(index)
-				// this kind of stuff definitely needs to be fixed!
+				case "logout":
+					for (Player p : GameEngine.getPlayers()) {
+						if (p.getSession().equals(session))
+							p.logout();
+					}
+					break;
+
+				case "chat":
+					System.out.println("chat stuff");
+					String msg = jsonObject.get("message").toString();
+					System.out.println("msg: " + msg);
+					String name = "";
+					String icon = "";
+					/*String level = "";
+					String icon = "";
+					// iterating through list of players is bad and needs to be revised
+					// redo all of this:
+					JSONObject json = new JSONObject();
+					
+					json.put("name", name);
+					json.put("level", level);
+					json.put("icon", icon);*/
+					for (Player p : GameEngine.getPlayers()) {
+						if (p.getSession().equals(session)) {
+							name = p.username;
+							icon = p.data.get("privilege").toString().equals("admin") ? "5" : "0";
+						}
+					}
+					System.out.println(icon);
+					JSONObject json = new JSONObject();
+					json.put("packet", "chat");
+					json.put("msg", msg);
+					json.put("name", name);
+					json.put("icon", icon);
+					for (Player p : GameEngine.getPlayers()) {
+						p.getSession().getBasicRemote().sendText(json.toJSONString());
+					}
+					break;
+
+				case "fish_testtt":
+					// GameEngine.playerHandler.players.get(index)
+					// this kind of stuff definitely needs to be fixed!
 //				for(Player p : GameEngine.players) {
 //					if(p.getSession().equals(session))
 //						Fishing.catchFish(p);
 //				}
-				break;
+					break;
+				}
 			}
-		}
-		} catch(RuntimeException e) {
+		} catch (RuntimeException e) {
 			System.out.println("Unhandled message from client!");
 		}
 	}

@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -32,7 +30,7 @@ public class Database {
 	}
 
 	public String lookup(String username) throws SQLException, ParseException {
-		System.out.println("Looking up username: " + username);
+		//System.out.println("Looking up username: " + username);
 		java.sql.Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery("select * from player where username = '" + username + "'");
 		while (resultSet.next()) {
@@ -42,7 +40,7 @@ public class Database {
 	}
 
 	public String getPassword(String username) throws SQLException, ParseException {
-		System.out.println("Looking up password for " + username);
+		//System.out.println("Looking up password for " + username);
 		java.sql.Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery("select * from player where username = '" + username + "'");
 		while (resultSet.next()) {
@@ -52,7 +50,7 @@ public class Database {
 	}
 
 	public JSONObject loadPlayerData(Player p) throws SQLException, ParseException {
-		System.out.println("Loading account for " + p.username);
+		//System.out.println("Loading account for " + p.username);
 		java.sql.Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery("select * from player where username = '" + p.username + "'");
 		JSONObject jsonObject = null;
@@ -78,7 +76,7 @@ public class Database {
 	}
 
 	public void viewAll() throws SQLException {
-		System.out.println("Accessing database...");
+		//System.out.println("Accessing database...");
 		java.sql.Statement statement = connection.createStatement();
 
 		String table = "player";
