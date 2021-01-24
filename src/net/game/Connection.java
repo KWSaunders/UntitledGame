@@ -32,7 +32,8 @@ public class Connection {
 
 	@OnOpen
 	public void onWebSocketConnect(Session sess) throws IOException {
-		sess.setMaxIdleTimeout(Long.MAX_VALUE);
+		//sess.setMaxIdleTimeout(Long.MAX_VALUE);
+		sess.setMaxIdleTimeout(0);
 		int online = GameEngine.getPlayersOnline();
 		JSONObject json = new JSONObject();
 		json.put("playersOnline", online + "");
@@ -72,9 +73,9 @@ public class Connection {
 					break;
 
 				case "chat":
-					System.out.println("chat stuff");
+					//System.out.println("chat stuff");
 					String msg = jsonObject.get("message").toString();
-					System.out.println("msg: " + msg);
+					//System.out.println("msg: " + msg);
 					String name = "";
 					String icon = "";
 					/*String level = "";
@@ -92,7 +93,7 @@ public class Connection {
 							icon = p.data.get("privilege").toString().equals("admin") ? "5" : "0";
 						}
 					}
-					System.out.println(icon);
+					//System.out.println(icon);
 					JSONObject json = new JSONObject();
 					json.put("packet", "chat");
 					json.put("msg", msg);

@@ -1,0 +1,9 @@
+1.) json bug not updating player data in socket.js (update packet)
+2.) send button needs to be resized and beside text-input instead of below it
+3.) remove background image when game-screen is loaded
+4.) fix autoscroll when website is live?
+5.) fix login/reconnect after restart or after disconnect
+6.) cleanup css, images, chat.js
+7.) fixup index.html use actual html editor to look for missing tags
+8.) change out background image, change out login button images (make it look more professional)
+9.) remember me button to work by saving username and password in local storage or cache/cookies
