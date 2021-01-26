@@ -1,0 +1,21 @@
+updates:
+resized main login panel for create/login to properly fit mobile phones
+created game-screen container
+put top-bar in game-screen
+put canvas in game-screen
+put chatbox below game-screen
+
+
+
+
+todo:
+get remember me button to work by saving username and password in localStorage or in cookies/cache
+create logout  button
+create settings interface
+create inventory interface
+create equipment interface
+create levels interface
+create skill arributes interface
+canvas system with server generated maps
+displayable dynamic networked "character" on canvas
+create character customization interface

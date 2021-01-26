@@ -38,7 +38,8 @@ public class WebServer {
 		game.start();
 		Server server = new Server();
 		ServerConnector connector = new ServerConnector(server);
-		connector.setPort(8080);
+		//connector.setPort(8080);
+		connector.setPort(1111);
 		server.addConnector(connector);
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		context.setContextPath("/");

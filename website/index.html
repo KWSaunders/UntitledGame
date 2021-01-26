@@ -83,7 +83,9 @@ Server is currently offline. Click the try again in about 5 seconds.<hr />
 	<tr>
 	<td onclick="clicksItem('coins')" width="60%" style="border-right:1px solid grey;"><img src="images/coins.png" class="img-small"> <span id="gold"></span><span id='top-bar-bc' style='display:none;'><br /><img onclick="clicksItem('bloodCrystals')"  src="images/bloodCrystals.png" class="img-small"> <span onclick="clicksItem('bloodCrystals')"  data-item-display="bloodCrystals">0</span>  <span style="display:none;" id="buy-blood-crystals-top-btn" onclick="navigate('purchaseCrystals'); playFowardMenuSound();" class="bc-button">+</span></span></td>
 <td width="25%" onclick="navigate('hiscores')" style="text-align: center; cursor: pointer;"><img src="images/globalLevel.png" id="top-bar-total-level-img" class="img-small"> <span id="combatLevel">0</span></td>
-	<td onclick="openOptionsDialogue();" style="text-align:right;" width="15%"><span>...</span></td>
+	<span><td onclick="openCombat();" style="text-align:right;" width="15%"><img src="images/top-bar-combat-img.png" id="top-bar-combat-img" class="img-small"></td></span>
+	<span><td onclick="openInventory();" style="text-align:right;" width="15%"><img src="images/top-bar-inventory-img.png" id="top-bar-inventory-img" class="img-small"></td></span>
+	<span><td onclick="openOptions();" style="text-align:right;" width="15%"><img src="images/top-bar-settings-img.png" id="top-bar-settings-img" class="img-small"></td></span>
 	</tr>
 	</table>
 </div>

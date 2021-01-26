@@ -32,8 +32,8 @@ public class Connection {
 
 	@OnOpen
 	public void onWebSocketConnect(Session sess) throws IOException {
-		//sess.setMaxIdleTimeout(Long.MAX_VALUE);
-		sess.setMaxIdleTimeout(0);
+		sess.setMaxIdleTimeout(Long.MAX_VALUE);
+		//sess.setMaxIdleTimeout(0);
 		int online = GameEngine.getPlayersOnline();
 		JSONObject json = new JSONObject();
 		json.put("playersOnline", online + "");
@@ -53,7 +53,6 @@ public class Connection {
 				case "login":
 					String username = jsonObject.get("username").toString();
 					String password = jsonObject.get("password").toString();
-					// session.getBasicRemote().sendText("Connecting to server...");
 					LoginManager.login(session, username, password);
 					break;
 
@@ -61,7 +60,6 @@ public class Connection {
 				case "register":
 					username = jsonObject.get("username").toString();
 					password = jsonObject.get("password").toString();
-					// session.getBasicRemote().sendText("Connecting to server...");
 					AccountCreation.register(session, username, password);
 					break;
 
@@ -73,32 +71,24 @@ public class Connection {
 					break;
 
 				case "chat":
-					//System.out.println("chat stuff");
+					//throw this all into a chat.java
 					String msg = jsonObject.get("message").toString();
-					//System.out.println("msg: " + msg);
 					String name = "";
 					String icon = "";
-					/*String level = "";
-					String icon = "";
-					// iterating through list of players is bad and needs to be revised
-					// redo all of this:
-					JSONObject json = new JSONObject();
-					
-					json.put("name", name);
-					json.put("level", level);
-					json.put("icon", icon);*/
+					String level = "";
 					for (Player p : GameEngine.getPlayers()) {
 						if (p.getSession().equals(session)) {
 							name = p.username;
 							icon = p.data.get("privilege").toString().equals("admin") ? "5" : "0";
+							level = p.data.get("combatLevel").toString();
 						}
 					}
-					//System.out.println(icon);
 					JSONObject json = new JSONObject();
 					json.put("packet", "chat");
 					json.put("msg", msg);
-					json.put("name", name);
+					json.put("name", Util.formatPlayerName(name));
 					json.put("icon", icon);
+					json.put("level", level);
 					for (Player p : GameEngine.getPlayers()) {
 						p.getSession().getBasicRemote().sendText(json.toJSONString());
 					}

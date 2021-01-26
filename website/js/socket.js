@@ -1,11 +1,17 @@
 var webSocket;
 var json;
-var serverIp = "ws:127.0.0.1:8080";
+//var serverIp = "wss://104.43.225.158:1111";
+var serverIp = "ws://127.0.0.1:1111";
 
 function initWebsocket() {
     webSocket = null;
     webSocket = new WebSocket(serverIp);
     initWebSocketFunctions()
+}
+
+function readData(key, val) {
+	//console.log(key, " -> ", val);
+	//document["getElementById"](key)["innerHTML"] = val;
 }
 
 function command(message) {
@@ -20,19 +26,22 @@ function command(message) {
             			//enableLoginFunctionsGlobal = true
         		}
 			break;
-		case "updatePlayer":
-			Object.keys(json).forEach(function(key) {
+		case "update":
+			document["getElementById"]("gold")["innerHTML"] = json.gold;
+			document["getElementById"]("combatLevel")["innerHTML"] = json.combatLevel;
+			//Object.keys(json).forEach(function(key) {
+				//readData(key, json[key]);
 				//this is weird, needs major fixing
-    			document["getElementById"](key)["innerHTML"] = json[key];
-				console.log(key, " -> ", json[key]);
-			});
+    				//document["getElementById"](key)["innerHTML"] = json[key];
+				//console.log(key, " -> ", json[key]);
+			//});
 			break;
 		case "chat":
 			//move this all into chat.js writeToChatBox function
 			console.log("chat was hit");
 		    	var chatSegment = "";
 			var name = json.name;
-			var levelChat = "123"
+			var levelChat = json.level;
 		    	var chatbox = document.getElementById("chat-area-div");    
 			//chat icons
 			var icon = json.icon;

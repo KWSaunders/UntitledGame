@@ -1,0 +1,553 @@
+
+C:\Users\xyle\Desktop>java -jar server.jar
+MySQL database connected!
+Change MySQL Database password to non-empty password for live version.
+Loaded: filter_words.txt
+Game Engine Started!
+2021-01-24 11:54:27.011:INFO::main: Logging initialized @591ms to org.eclipse.jetty.util.log.StdErrLog
+2021-01-24 11:54:27.214:INFO:oejs.Server:main: jetty-9.4.z-SNAPSHOT; built: 2018-03-20T12:21:10Z; git: 1f8159b1e4a42d3f79997021ea1609f2fbac6de5; jvm 15.0.2+7-27
+2021-01-24 11:54:27.292:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2021-01-24 11:54:27.292:INFO:oejs.session:main: No SessionScavenger set, using defaults
+2021-01-24 11:54:27.292:INFO:oejs.session:main: Scavenging every 660000ms
+2021-01-24 11:54:27.370:INFO:oejsh.ContextHandler:main: Started o.e.j.s.ServletContextHandler@48f2bd5b{/,null,AVAILABLE}
+2021-01-24 11:54:27.417:INFO:oejs.AbstractConnector:main: Started ServerConnector@5e6f1b24{HTTP/1.1,[http/1.1]}{0.0.0.0:1111}
+2021-01-24 11:54:27.417:INFO:oejs.Server:main: Started @992ms
+2021-01-24 11:54:33.882:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03;\xF9\xB8[\xAcwq...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:34.022:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03(![\xFa\x07\xCci...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:35.054:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xC2 P\tk\xE6\xCa...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:35.206:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x035\xD6\xBc\xE4g\x82T...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:35.801:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03ck\x07b\xE0\x90\xFa...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:35.942:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xAf\xF6\xAe/\xE5\x08\xDa...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:37.780:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03l\xAd\x0f\xE4\xD0\x16\x14...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:37.938:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xDa\x89\xE79`a\xEf...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.110:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03 M\n\x05\xB6\x1fd...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.271:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03K?j4\xB3\xB73...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.438:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xC7~\xBa\xA389z...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.626:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03WZv6L&)...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.767:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03h2R\xC0\x91Ns...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:38.929:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\x9b\xFa\x06B\x8f\xFd\x0b...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:39.134:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03~\x9f\x9a\xE5\xA0\x81\xF9...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:39.307:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x037/\xC8W-\xE6\x18...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:43.961:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xBc\r\\\xEa\xAdA\xE7...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:44.167:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03_\xF5\xD1\xBem\x88G...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:51.557:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xCf\xDc\xBcg\x1f\xC4^...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:51.698:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03)\x8b\xDb\xC7,\x96N...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:56.429:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xC1\x9a\x99\x1e\x95\x16\xFf...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:56.586:WARN:oejh.HttpParser:qtp913190639-20: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03u\x8a\xB4o\xA4G\xB6...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:59.173:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xD2-X\xF7\xEbr1...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:54:59.314:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xFc\x1cJ\x15\xF3\xD0\x80...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:55:01.587:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03q\x97\xC9\xB9qwZ...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:55:01.734:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03a.\xA5D<o2...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:55:02.207:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\n\x1cG\x1a4\xF4\xBe...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:55:02.352:WARN:oejh.HttpParser:qtp913190639-18: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03X\xD9v:j\x80\xE3...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:50.254:WARN:oejh.HttpParser:qtp913190639-17: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xA1jL\x9d\x99\x9f<...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:50.439:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03N\x95\x84\xC8\xB6\xA4\x9c...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:51.528:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xD1#\x18D_\xC4U...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:51.660:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xB1\x18i\x95\xCf\xA0-...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:52.459:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03i\x7f\x8d\xB70\xE1\xA3...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:52.607:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xCd\t\x99~|\xF9n...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:53.274:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\x16g\x7f\x7fx\xC7V...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:53.414:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03MS0\xBa+\xA4\xAe...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:56.378:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xFc\xB0<\x80\x9e\xEaM...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:56.509:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03u\xAc\x01%Y\xDe>...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:57.275:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xD9\x01+J\n\xF57...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:57.427:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xFd\xBc\x10T\x07Z\xBc...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:58.245:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xBb\xFc:%3\xB6u...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:58.377:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\x83%\x8d\xD2#\xBb\x9a...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:58.976:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03"\r\x89NI\xAaJ...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:59.121:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03B\x18\xBa8\xEe\x08\xF3...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:59.624:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03(\xC7\xA8\xBe\xBeA\x05...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 11:59:59.765:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xA9\xF4\x86s\xF2\xCb\xDa...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:00.237:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03l\xCfd\xF8*\x8e\x9a...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:00.377:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xB4\x17\xC8\x90G\xF8(...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:00.932:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xC2\xD2\x9cL\xE5\xEc0...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:01.073:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\r\xD3\xA80\xC8\x8e\xF2...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:01.601:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xC6IFO\xE6D_...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:01.742:WARN:oejh.HttpParser:qtp913190639-19: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xEa7?\x1e=Y(...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:02.381:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03Qx0\x90\xC5@\x1f...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:02.522:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\xF0\x89s\x90\x1e\xD9\x92...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:04.260:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03\x81\x13\x80\xBa\xAbi!...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+2021-01-24 12:00:04.400:WARN:oejh.HttpParser:qtp913190639-21: Illegal character 0x16 in state=START for buffer HeapByteBuffer@250a339d[p=1,l=517,c=8192,r=516]={\x16<<<\x03\x01\x02\x00\x01\x00\x01\xFc\x03\x03)HT\xB5\x14\x99\xA2...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"185","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"player","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"Ok"}
+{"packet":"chat","message":"Omae wa"}
+Client connected from: 72.194.12.144
+72.194.12.144 closed CloseReason[1001]
+Client connected from: 72.194.12.144
+{"packet":"login","username":"xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"185","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"player","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"ok"}
+{"packet":"chat","message":"asdfashjdkfjaskdlfjasldkfasd"}
+{"packet":"chat","message":"asdfasdfasssssssssssssssssssssssdf"}
+{"packet":"chat","message":"dfasdfasdfa"}
+72.194.12.144 closed CloseReason[1001]
+Finished saving... xyle
+xyle has disconnected.
+Client connected from: 72.194.12.144
+Client connected from: 72.194.12.144
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+72.194.12.144 closed CloseReason[1001]
+72.194.12.144 closed CloseReason[1001]
+Client connected from: 72.194.12.144
+{"packet":"login","username":"xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"428","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"player","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"asdfasdf"}
+72.194.12.144 closed CloseReason[1001]
+Finished saving... xyle
+xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"470","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"player","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"adasf"}
+72.194.12.144 closed CloseReason[1001]
+Finished saving... xyle
+xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"477","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"f"}
+{"packet":"chat","message":"it is wednesday my dude"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... xyle
+xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"549","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"HhhhhhhhhhhhhhhhUo"}
+{"packet":"chat","message":"Hnnnng"}
+{"packet":"chat","message":"????????????"}
+Finished saving... Xyle
+{"packet":"chat","message":"Hhhhhhhhhhhjh"}
+{"packet":"chat","message":"Hhhhhhhhhhjjjjj"}
+{"packet":"chat","message":"Hbhhjjjjjjjjj"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs098"}
+{"packet":"login","username":"Xyle","password":"ffs"}
+{"packet":"login","username":"Xyle","password":"ffs"}
+{"packet":"login","username":"Xyle","password":"77"}
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"688","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"But also fuck chinnnnnna"}
+{"packet":"chat","message":"The liberals did it"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"login","username":"Nigha","password":""}
+{"packet":"register","username":"Omae wa","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"0","currentXp":"0","created":"01-24-2021 12:18:25","privilege":"player","combatLevel":"1"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Omae wa
+Omae wa has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"register","username":"omae wa","password":"ffs09"}
+{"packet":"login","username":"Omae wa","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"3","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 12:18:25","privilege":"player","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"Ok"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Omae wa
+Omae wa has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs"}
+{"packet":"login","username":"Xyle","password":"ffs"}
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"784","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+onWebSocketError:
+org.eclipse.jetty.io.EofException
+        at org.eclipse.jetty.io.ChannelEndPoint.flush(ChannelEndPoint.java:286)
+        at org.eclipse.jetty.io.WriteFlusher.flush(WriteFlusher.java:429)
+        at org.eclipse.jetty.io.WriteFlusher.write(WriteFlusher.java:323)
+        at org.eclipse.jetty.io.AbstractEndPoint.write(AbstractEndPoint.java:380)
+        at org.eclipse.jetty.websocket.common.io.FrameFlusher.flush(FrameFlusher.java:218)
+        at org.eclipse.jetty.websocket.common.io.FrameFlusher.process(FrameFlusher.java:157)
+        at org.eclipse.jetty.util.IteratingCallback.processing(IteratingCallback.java:241)
+        at org.eclipse.jetty.util.IteratingCallback.iterate(IteratingCallback.java:224)
+        at org.eclipse.jetty.websocket.common.io.FrameFlusher.enqueue(FrameFlusher.java:90)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.outgoingFrame(AbstractWebSocketConnection.java:495)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.close(WebSocketSession.java:223)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.close(WebSocketSession.java:202)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onConnectionStateChange(AbstractWebSocketConnection.java:353)
+        at org.eclipse.jetty.websocket.common.io.IOState.notifyStateListeners(IOState.java:184)
+        at org.eclipse.jetty.websocket.common.io.IOState.onReadFailure(IOState.java:498)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:547)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:391)
+        at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+        at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:319)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:175)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:133)
+        at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:754)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:672)
+        at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.io.IOException: Connection reset by peer
+        at java.base/sun.nio.ch.SocketDispatcher.writev0(Native Method)
+        at java.base/sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:58)
+        at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:182)
+        at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:130)
+        at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:536)
+        at org.eclipse.jetty.io.ChannelEndPoint.flush(ChannelEndPoint.java:266)
+        ... 26 more
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"813","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+Loaded: {"gold":"0","timePlayed":"846","currentXp":"0","lastIp":"72.194.12.144","created":"01-24-2021 11:41:40","privilege":"admin","packet":"update","combatLevel":"1"}
+{"packet":"chat","message":"Chicken"}
+{"packet":"chat","message":"Eat kfc"}
+Finished saving... Xyle
+{"packet":"chat","message":"Watermelon"}
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Finished saving... Xyle
+Xyle has disconnected.
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+onWebSocketError:
+java.lang.RuntimeException: Cannot call method public void net.game.Connection#onWebSocketText(java.lang.String, javax.websocket.Session) with args: [java.lang.String, org.eclipse.jetty.websocket.jsr356.JsrSession]
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.unwrapRuntimeException(CallableMethod.java:94)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:76)
+        at org.eclipse.jetty.websocket.jsr356.annotations.OnMessageTextCallable.call(OnMessageTextCallable.java:63)
+        at org.eclipse.jetty.websocket.jsr356.annotations.JsrEvents.callText(JsrEvents.java:197)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextMessage(JsrAnnotatedEventDriver.java:386)
+        at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextFrame(JsrAnnotatedEventDriver.java:368)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:476)
+        at org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:183)
+        at org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)
+        at org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension.incomingFrame(DeflateFrameExtension.java:69)
+        at org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:245)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:560)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:391)
+        at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+        at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:319)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:175)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:133)
+        at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:754)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:672)
+        at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 30,736,138 milliseconds ago.  The last packet sent successfully to the server was 30,736,138 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3364)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1983)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2618)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
+        at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1557)
+        at net.game.Database.lookup(Database.java:35)
+        at net.game.LoginManager.login(LoginManager.java:20)
+        at net.game.Connection.onWebSocketText(Connection.java:56)
+        at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:71)
+        ... 26 more
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+        at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:420)
+        at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+        at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:826)
+        at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1051)
+        at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+        at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3345)
+        ... 38 more
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+onWebSocketError:
+java.lang.RuntimeException: Cannot call method public void net.game.Connection#onWebSocketText(java.lang.String, javax.websocket.Session) with args: [java.lang.String, org.eclipse.jetty.websocket.jsr356.JsrSession]
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.unwrapRuntimeException(CallableMethod.java:94)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:76)
+        at org.eclipse.jetty.websocket.jsr356.annotations.OnMessageTextCallable.call(OnMessageTextCallable.java:63)
+        at org.eclipse.jetty.websocket.jsr356.annotations.JsrEvents.callText(JsrEvents.java:197)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextMessage(JsrAnnotatedEventDriver.java:386)
+        at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextFrame(JsrAnnotatedEventDriver.java:368)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:476)
+        at org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:183)
+        at org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)
+        at org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension.incomingFrame(DeflateFrameExtension.java:69)
+        at org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:245)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:560)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:391)
+        at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+        at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:319)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:175)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:133)
+        at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:754)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:672)
+        at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.Util.getInstance(Util.java:386)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+        at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1205)
+        at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1197)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2483)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2465)
+        at net.game.Database.lookup(Database.java:34)
+        at net.game.LoginManager.login(LoginManager.java:20)
+        at net.game.Connection.onWebSocketText(Connection.java:56)
+        at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:71)
+        ... 26 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 30,736,138 milliseconds ago.  The last packet sent successfully to the server was 30,736,138 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3364)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1983)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2618)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
+        at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1557)
+        at net.game.Database.lookup(Database.java:35)
+        ... 32 more
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+        at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:420)
+        at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+        at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:826)
+        at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1051)
+        at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+        at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3345)
+        ... 38 more
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Client connected from: 72.194.12.144
+{"packet":"login","username":"Xyle","password":"ffs09"}
+onWebSocketError:
+java.lang.RuntimeException: Cannot call method public void net.game.Connection#onWebSocketText(java.lang.String, javax.websocket.Session) with args: [java.lang.String, org.eclipse.jetty.websocket.jsr356.JsrSession]
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.unwrapRuntimeException(CallableMethod.java:94)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:76)
+        at org.eclipse.jetty.websocket.jsr356.annotations.OnMessageTextCallable.call(OnMessageTextCallable.java:63)
+        at org.eclipse.jetty.websocket.jsr356.annotations.JsrEvents.callText(JsrEvents.java:197)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextMessage(JsrAnnotatedEventDriver.java:386)
+        at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextFrame(JsrAnnotatedEventDriver.java:368)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:476)
+        at org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:183)
+        at org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)
+        at org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension.incomingFrame(DeflateFrameExtension.java:69)
+        at org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:245)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:560)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:391)
+        at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+        at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:319)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:175)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:133)
+        at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:754)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:672)
+        at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.Util.getInstance(Util.java:386)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+        at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1205)
+        at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1197)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2483)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2465)
+        at net.game.Database.lookup(Database.java:34)
+        at net.game.LoginManager.login(LoginManager.java:20)
+        at net.game.Connection.onWebSocketText(Connection.java:56)
+        at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:71)
+        ... 26 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 30,736,138 milliseconds ago.  The last packet sent successfully to the server was 30,736,138 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3364)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1983)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2618)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
+        at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1557)
+        at net.game.Database.lookup(Database.java:35)
+        ... 32 more
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+        at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:420)
+        at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+        at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:826)
+        at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1051)
+        at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+        at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3345)
+        ... 38 more
+72.194.12.144 closed CloseReason[1006,WebSocket Read EOF]
+Client connected from: 72.194.12.144
+72.194.12.144 closed CloseReason[1001]
+Client connected from: 72.194.12.144
+{"packet":"login","username":"xyle","password":"ffs09"}
+onWebSocketError:
+java.lang.RuntimeException: Cannot call method public void net.game.Connection#onWebSocketText(java.lang.String, javax.websocket.Session) with args: [java.lang.String, org.eclipse.jetty.websocket.jsr356.JsrSession]
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.unwrapRuntimeException(CallableMethod.java:94)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:76)
+        at org.eclipse.jetty.websocket.jsr356.annotations.OnMessageTextCallable.call(OnMessageTextCallable.java:63)
+        at org.eclipse.jetty.websocket.jsr356.annotations.JsrEvents.callText(JsrEvents.java:197)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextMessage(JsrAnnotatedEventDriver.java:386)
+        at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextFrame(JsrAnnotatedEventDriver.java:368)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:476)
+        at org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:183)
+        at org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.nextIncomingFrame(PerMessageDeflateExtension.java:105)
+        at org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)
+        at org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.incomingFrame(PerMessageDeflateExtension.java:85)
+        at org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:220)
+        at org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:245)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:560)
+        at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:391)
+        at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:281)
+        at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:102)
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:319)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:175)
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:133)
+        at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:754)
+        at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:672)
+        at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.Util.getInstance(Util.java:386)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+        at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+        at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1205)
+        at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1197)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2483)
+        at com.mysql.jdbc.ConnectionImpl.createStatement(ConnectionImpl.java:2465)
+        at net.game.Database.lookup(Database.java:34)
+        at net.game.LoginManager.login(LoginManager.java:20)
+        at net.game.Connection.onWebSocketText(Connection.java:56)
+        at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:71)
+        ... 27 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: The last packet successfully received from the server was 30,736,138 milliseconds ago.  The last packet sent successfully to the server was 30,736,138 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+        at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+        at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3364)
+        at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1983)
+        at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2618)
+        at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
+        at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1557)
+        at net.game.Database.lookup(Database.java:35)
+        at net.game.LoginManager.login(LoginManager.java:20)
+        at net.game.Connection.onWebSocketText(Connection.java:56)
+        at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+        at org.eclipse.jetty.websocket.common.events.annotated.CallableMethod.call(CallableMethod.java:71)
+        at org.eclipse.jetty.websocket.jsr356.annotations.OnMessageTextCallable.call(OnMessageTextCallable.java:63)
+        at org.eclipse.jetty.websocket.jsr356.annotations.JsrEvents.callText(JsrEvents.java:197)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextMessage(JsrAnnotatedEventDriver.java:386)
+        at org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)
+        at org.eclipse.jetty.websocket.jsr356.endpoints.JsrAnnotatedEventDriver.onTextFrame(JsrAnnotatedEventDriver.java:368)
+        at org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)
+        at org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:476)
+        at org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:183)
+        at org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)
+        at org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension.incomingFrame(DeflateFrameExtension.java:69)
+        ... 15 more
+Caused by: java.net.SocketException: An established connection was aborted by the software in your host machine
+        at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:420)
+        at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+        at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:826)
+        at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1051)
+        at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+        at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+        at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:3345)
+        ... 38 more

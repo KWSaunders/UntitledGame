@@ -1,0 +1,7 @@
+104.43.225.158
+xyle:Idojava4$$$###
+firewall
+jdk
+xampp
+server.jar
+git
